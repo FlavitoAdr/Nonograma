@@ -46,14 +46,23 @@ Bonus = 3
 possibilidades = (2+3)!/(2!*3!) = 10
 
  1º => 0 0 3 => 0 1 3
+ 
  2º => 0 1 2 => 0 2 2
+ 
  3º => 0 2 1 => 0 3 1
+ 
  4º => 0 3 0 => 0 4 0
+ 
  5º => 1 0 2 => 1 1 2
+ 
  6º => 1 1 1 => 1 2 1
+ 
  7º => 1 2 0 => 1 3 0
+ 
  8º => 2 0 1 => 2 1 1
+ 
  9º => 2 1 0 => 2 2 0
+ 
 10º => 3 0 0 => 3 1 0
 
 por fim no terceiro algoritmo ele encaixa os termos entre a matriz resultante do segundo algoritmo.
@@ -67,14 +76,23 @@ possibilidades = (2+3)!/(2!*3!) = 10
 Os termos são: 4 e 2 para um quadrado de tamanho 10
 
  1º => 0 0 3 => 0 1 3 => 0 4 1 2 3
+ 
  2º => 0 1 2 => 0 2 2 => 0 4 2 2 2
+ 
  3º => 0 2 1 => 0 3 1 => 0 4 3 2 1
+ 
  4º => 0 3 0 => 0 4 0 => 0 4 4 2 0
+ 
  5º => 1 0 2 => 1 1 2 => 1 4 1 2 2
+ 
  6º => 1 1 1 => 1 2 1 => 1 4 2 2 1
+ 
  7º => 1 2 0 => 1 3 0 => 1 4 3 2 0
+ 
  8º => 2 0 1 => 2 1 1 => 2 4 1 2 1
+ 
  9º => 2 1 0 => 2 2 0 => 2 4 2 2 0
+ 
 10º => 3 0 0 => 3 1 0 => 3 4 1 2 0
 
 O resultado serão todas as possibilidades de preenchimento da linha, um novo algoritmo cria estas linhas em lista, ele define os numeros de coluna na posição impar como 2 e os numeros de coluna na posição par como 1, o programa irá trabalhar como 1 para preenchido e 2 para espaço vazio e 0 quando não se tem o conhecimento do valor.
@@ -82,14 +100,23 @@ O resultado serão todas as possibilidades de preenchimento da linha, um novo al
 exemplo:
 
  1º => 0 0 3 => 0 1 3 => 0 4 1 2 3 => 1 1 1 1 2 1 1 2 2 2
+ 
  2º => 0 1 2 => 0 2 2 => 0 4 2 2 2 => 1 1 1 1 2 2 1 1 2 2
+ 
  3º => 0 2 1 => 0 3 1 => 0 4 3 2 1 => 1 1 1 1 2 2 2 1 1 2
+ 
  4º => 0 3 0 => 0 4 0 => 0 4 4 2 0 => 1 1 1 1 2 2 2 2 1 1
+ 
  5º => 1 0 2 => 1 1 2 => 1 4 1 2 2 => 2 1 1 1 1 2 1 1 2 2
+ 
  6º => 1 1 1 => 1 2 1 => 1 4 2 2 1 => 2 1 1 1 1 2 2 1 1 2
+ 
  7º => 1 2 0 => 1 3 0 => 1 4 3 2 0 => 2 1 1 1 1 2 2 2 1 1
+ 
  8º => 2 0 1 => 2 1 1 => 2 4 1 2 1 => 2 2 1 1 1 1 2 1 1 2
+ 
  9º => 2 1 0 => 2 2 0 => 2 4 2 2 0 => 2 2 1 1 1 1 2 2 1 1
+ 
 10º => 3 0 0 => 3 1 0 => 3 4 1 2 0 => 2 2 2 1 1 1 1 2 1 1
 
 Em seguida o programa irá trabalhar em um loop até que resolva o jogo, ele irá procurar por valores constantes nas possibilidades para descobrir preenchimentos e vazios na tabela, realizar o teste em todas as linhas e colunas ele tenta usar as constantes para eliminar possibilidades, por isso um loop encontrando constantes podemos diminuir possibilidades, diminuindo possibilidades pode-se encontrar mais constante, a tabela é inicialmente formada por zeros, quando encontrado alguma constante ele altera na tabela.
@@ -98,17 +125,27 @@ Em seguida o programa irá trabalhar em um loop até que resolva o jogo, ele ir�
 exemplo:
 
 1 1 1 1 2 1 1 2 2 2
+
 1 1 1 1 2 2 1 1 2 2
+
 1 1 1 1 2 2 2 1 1 2
+
 1 1 1 1 2 2 2 2 1 1
+
 2 1 1 1 1 2 1 1 2 2
+
 2 1 1 1 1 2 2 1 1 2
+
 2 1 1 1 1 2 2 2 1 1
+
 2 2 1 1 1 1 2 1 1 2
+
 2 2 1 1 1 1 2 2 1 1
+
 2 2 2 1 1 1 1 2 1 1
 
 | | | | | | | | | |
+
 V V V V V V V V V V
 
 0 0 0 1 0 0 0 0 0 0 Na quarta coluna todos os numeros eram 1, por isso defini-se que só pode ser 1 independente de qual possibilidade seja.
@@ -116,19 +153,28 @@ V V V V V V V V V V
 O programa tambem trabalha com a relação de linhas e colunas, ao descobrir uma constante em uma linha elimina possibilidades em na coluna, e vice versa.
 
 exemplo:
-                3
-                4
+      3
+      4
 
-A tabela: 0 0 0 0 0 0 0 0 0 0
-          0 0 0 0 0 0 0 0 0 0
-          0 0 0 0 0 0 0 0 0 0
-    4 2   0 0 0 0 0 0 0 0 0 0
-          0 0 0 0 0 0 0 0 0 0
-          0 0 0 0 0 0 0 0 0 0
-          0 0 0 0 0 0 0 0 0 0
-          0 0 0 0 0 0 0 0 0 0
-          0 0 0 0 0 0 0 0 0 0
-          0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0
+
+0 0 0 0 0 0 0 0 0 0
+          
+0 0 0 0 0 0 0 0 0 0
+          
+0 0 0 0 0 0 0 0 0 0   4 2
+    
+0 0 0 0 0 0 0 0 0 0
+          
+0 0 0 0 0 0 0 0 0 0
+          
+0 0 0 0 0 0 0 0 0 0
+          
+0 0 0 0 0 0 0 0 0 0
+          
+0 0 0 0 0 0 0 0 0 0
+          
+0 0 0 0 0 0 0 0 0 0
 
 Encontrando as possibilidades da coluna com os termos 3 e 4.
 
@@ -139,19 +185,29 @@ possibilidades = (2+2)!/(2!*2!) = 6
 Os termos são: 4 e 2 para um quadrado de tamanho 10
 
  1º => 0 0 2 => 0 1 2 => 0 3 1 4 2 => 1 1 1 2 1 1 1 1 2 2
+ 
  2º => 0 1 1 => 0 2 1 => 0 3 2 4 1 => 1 1 1 2 2 1 1 1 1 2
+ 
  3º => 0 2 0 => 0 3 1 => 0 3 3 4 1 => 1 1 1 2 2 2 1 1 1 1
+ 
  4º => 1 0 1 => 1 1 1 => 1 3 1 4 1 => 2 1 1 1 2 1 1 1 1 2
+ 
  5º => 1 1 0 => 1 2 0 => 1 3 2 4 0 => 2 1 1 1 2 2 1 1 1 1
+ 
  6º => 2 0 0 => 2 1 0 => 2 3 1 4 0 => 2 2 1 1 1 2 1 1 1 1
 
 podemos encontrar as seguintes constantes:
 
 1 1 1 2 1 1 1 1 2 2
+
 1 1 1 2 2 1 1 1 1 2
+
 1 1 1 2 2 2 1 1 1 1
+
 2 1 1 1 2 1 1 1 1 2
+
 2 1 1 1 2 2 1 1 1 1
+
 2 2 1 1 1 2 1 1 1 1
 
 0 0 1 0 0 0 1 1 0 0 <= encontrando constantes com 6 possibilidades, encontramos 3 constantes.
@@ -161,17 +217,25 @@ Ao descobrir a constante na quarta coluna na linha com os termos 4 e 2, pode se 
 0 0 0 1 0 0 0 0 0 0
 
 1 1 1 2 1 1 1 1 2 2 Tem um 2 aonde deveria ser 1
+
 1 1 1 2 2 1 1 1 1 2 Tem um 2 aonde deveria ser 1
+
 1 1 1 2 2 2 1 1 1 1 Tem um 2 aonde deveria ser 1
+
 2 1 1 1 2 1 1 1 1 2
+
 2 1 1 1 2 2 1 1 1 1
+
 2 2 1 1 1 2 1 1 1 1
 
 sobra entao três possibilidades, que ao procurar constantes podemos encontrar mais por ter eliminado falsas possibilidades:
 
 2 1 1 1 2 1 1 1 1 2
+
 2 1 1 1 2 2 1 1 1 1
+
 2 2 1 1 1 2 1 1 1 1
+
 
 2 0 1 1 0 0 1 1 1 0 <= encontrando constantes com 3 possibilidades, encontramos 6 constantes.
 
@@ -182,6 +246,7 @@ coluna com os termos 3 e 4 e em seguida ao descobrir a constante da linha com os
 1 1 1 1 1 1
 
 | | | | | |
+
 V V V V V V
 
 0 0 0 1 1 1
