@@ -147,7 +147,7 @@ podemos encontrar as seguintes constantes:
 
 0 0 1 0 0 0 1 1 0 0 <= encontrando constantes com 6 possibilidades, encontramos 3 constantes.
 
-	Ao descobrir a constante na quarta coluna na linha com os termos 4 e 2, pode se verificar que elimina possibilidades na coluna com os termos 3 e 4 em que define como possibilidade o 2 aonde já se sabe que tem a constante 1, logo podemos eliminar.
+Ao descobrir a constante na quarta coluna na linha com os termos 4 e 2, pode se verificar que elimina possibilidades na coluna com os termos 3 e 4 em que define como possibilidade o 2 aonde já se sabe que tem a constante 1, logo podemos eliminar.
 
 0 0 0 1 0 0 0 0 0 0
 
