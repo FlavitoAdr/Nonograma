@@ -18,14 +18,23 @@ Bonus = 3
 possibilidades = (2+3)!/(2!*3!) = 10
 
  1º => 0 0 3
+ 
  2º => 0 1 2
+ 
  3º => 0 2 1
+ 
  4º => 0 3 0
+ 
  5º => 1 0 2
+ 
  6º => 1 1 1
+ 
  7º => 1 2 0
+ 
  8º => 2 0 1
+ 
  9º => 2 1 0
+ 
 10º => 3 0 0
 
 No segundo algoritmo ele irá somar 1 a todas as colunas com excessão da primeira e última coluna.
