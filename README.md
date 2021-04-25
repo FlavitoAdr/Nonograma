@@ -245,3 +245,9 @@ coluna com os termos 3 e 4 e em seguida ao descobrir a constante da linha com os
 0 0 0 1 1 1
 
 Então quando em loop ele tenta resolver o desafio, por mais que eu ainda não tenha provado acredito que possa resolver qualquer fase que só tenha uma forma de resolver, jogos com mais de uma resolução não sairia do loop, nunca testado apenas teórico, mas todas as fases geralmente são feitas para que se tenho um único formato, por mais que exista formatos de diversas resoluções.
+
+Para enviar os dados do jogo e obter a resolução é necessário enviar uma única frase com o tamanho do quadrado, em seguida separado por vírgula informar todas as linhas com os termos separados por vírgula e para finalizar a linha deve enviar um zero no final de cada linha, e depois o mesmo processo com as colunas e por fim mandar dois zeros separados por vírgula no final.
+
+exemplo:
+
+5, 3, 0, 2, 0, 1, 3, 0, 2, 1, 0, 3, 0, 1, 2, 0, 1, 2, 0, 3, 1, 0, 2, 1, 0, 2, 0, 0
