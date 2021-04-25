@@ -144,10 +144,6 @@ exemplo:
 
 2 2 2 1 1 1 1 2 1 1
 
-| | | | | | | | | |
-
-V V V V V V V V V V
-
 0 0 0 1 0 0 0 0 0 0 Na quarta coluna todos os numeros eram 1, por isso defini-se que só pode ser 1 independente de qual possibilidade seja.
 
 O programa tambem trabalha com a relação de linhas e colunas, ao descobrir uma constante em uma linha elimina possibilidades em na coluna, e vice versa.
@@ -244,10 +240,6 @@ Para que o programa saiba quais são as possibilidades eliminadas ele usa uma li
 coluna com os termos 3 e 4 e em seguida ao descobrir a constante da linha com os termos 4 e 2, elimina as três primeiras possibilidades:
 
 1 1 1 1 1 1
-
-| | | | | |
-
-V V V V V V
 
 0 0 0 1 1 1
 
